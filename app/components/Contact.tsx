@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 const INSTAGRAM = "https://www.instagram.com/soleia.massage.alexanne";
 const PHONE = "tel:+33615288890";
-const EMAIL = "contact@soleiamassage.fr";
+const EMAIL = "soleiamassagealexanne@gmail.com";
 
 export default function Contact() {
   const prenomRef = useRef<HTMLInputElement>(null);
@@ -63,7 +63,6 @@ export default function Contact() {
                 <p className="text-white/70 text-xs tracking-widest uppercase mb-0.5">Téléphone</p>
                 <p className="text-white font-medium text-sm">06 15 28 88 90</p>
               </div>
-              <span className="text-xs text-white/80 bg-white/20 px-2.5 py-1 rounded-full">Recommandé</span>
             </a>
 
             {/* Instagram — priorité 2 */}
@@ -84,7 +83,6 @@ export default function Contact() {
                 <p className="text-white/50 text-xs tracking-widest uppercase mb-0.5">Instagram</p>
                 <p className="text-white text-sm">@soleia.massage.alexanne</p>
               </div>
-              <span className="text-xs text-white/70 bg-white/10 px-2.5 py-1 rounded-full">Recommandé</span>
             </a>
 
             {/* Horaires */}
@@ -105,14 +103,7 @@ export default function Contact() {
 
         {/* Formulaire → mailto */}
         <div>
-          <div className="flex items-center gap-2 mb-6 p-3 rounded-xl bg-[#EDE0CC] border border-[#C4B09A]/30">
-            <svg className="w-4 h-4 text-[#7A6652] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" />
-            </svg>
-            <p className="text-xs text-[#7A6652] leading-relaxed">
-              Ce formulaire ouvre votre application mail avec le message pré-rempli.
-            </p>
-          </div>
+          
 
           <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-[#2D2416]/5 flex flex-col gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -139,7 +130,7 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-xs tracking-widest uppercase text-[#7A6652]">Votre email (pour qu'elle puisse vous répondre)</label>
+              <label className="text-xs tracking-widest uppercase text-[#7A6652]">Votre email</label>
               <input
                 ref={emailRef}
                 type="email"
@@ -177,7 +168,7 @@ export default function Contact() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              Ouvrir dans mon application mail
+              Envoyer mail
             </button>
           </form>
         </div>
