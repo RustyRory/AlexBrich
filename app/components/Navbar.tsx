@@ -35,8 +35,8 @@ export default function Navbar() {
             <span className={`font-[family-name:var(--font-serif)] text-xl tracking-wide transition-colors duration-500 ${scrolled ? "text-[#2D2416]" : "text-[#F7F0E6]"}`}>
               Soleia Massage
             </span>
-            <span className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-500 ${scrolled ? "text-[#7A6652]" : "text-[#F7F0E6]/70"}`}>
-              par Alexanne
+            <span className={`text-[10px] tracking-[0.2em] transition-colors duration-500 ${scrolled ? "text-[#7A6652]" : "text-[#F7F0E6]/70"}`}>
+              Par Alexanne
             </span>
           </div>
         </a>
