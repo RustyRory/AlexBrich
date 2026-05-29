@@ -1,6 +1,4 @@
-import type { Review } from "@/lib/reviews";
-
-type Props = { reviews: Review[] };
+import { getGoogleReviews, type Review } from "@/lib/reviews";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -19,7 +17,9 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-export default function Testimonials({ reviews }: Props) {
+export default async function Testimonials() {
+  const reviews = await getGoogleReviews();
+
   return (
     <section id="testimonials" className="py-24 md:py-32 px-6 bg-[#EDF2EB]">
       <div className="max-w-6xl mx-auto">
@@ -33,7 +33,6 @@ export default function Testimonials({ reviews }: Props) {
           <h2 className="font-[family-name:var(--font-serif)] font-light text-4xl md:text-5xl text-[#2D2416]">
             Ce qu&apos;elles disent
           </h2>
-          {/* Badge Google */}
           <div className="flex items-center gap-2 text-xs text-[#7A6652]">
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -47,7 +46,7 @@ export default function Testimonials({ reviews }: Props) {
 
         {reviews.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reviews.map((r, i) => (
+            {reviews.map((r: Review, i: number) => (
               <div
                 key={i}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-[#7A9A72]/10 flex flex-col"
